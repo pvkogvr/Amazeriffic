@@ -5,10 +5,27 @@ h1, h2, h3, h4, h5{
     font-family: 'Ubuntu', sans-serif;
 }
 a, p, li{
-    font-family: Droid Sans; 
+    font-family: 'Droid Sans'; 
+}
+a{
+    font-weight: 600;
+    text-decoration: none;
+    color: red;
+}
+a:hover{
+    text-decoration: underline;
 }
 h1{
+    font-size: 250%;
+    font-style: italic;
+}
+h2{
+    font-size: 150%;
+    font-weight: 600;
+}
+h3{
     font-size: 100%;
+    font-weight: 600;
 }
 header, main, footer{
     min-width: 855px;
@@ -16,6 +33,11 @@ header, main, footer{
 header .container, main .container, footer .container{
     max-width: 855px;
     margin: auto;
+}
+header .container{
+    padding-top: 20px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #f9e933;
 }
 header{
     background: white;
@@ -32,14 +54,36 @@ header nav{
 main{
     background: white;
 }
+main .container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 main .left{
     float:left;
     width: 570px;
+}
+main p{
+    padding-top: 15px;
+}
+main h3{
+    padding-top: 10px;
+}
+main ul{
+    padding-top: 5px;
+}
+main li{
+    padding-top: 5px;
 }
 /* main .right{
     float:left;
     width: 280px;
 } */
+footer .container{
+    padding-top: 30px;
+}
+footer h5{
+    padding-bottom: 20px;
+}
 footer .contact{
     float: left;
     width: 570px;
@@ -47,4 +91,8 @@ footer .contact{
 footer .sitemap{
     float:right;
     width: 285px;
+}
+footer .LCol{
+    float:left;
+    width: 142px;
 }
