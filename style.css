@@ -86,6 +86,16 @@ main li{
 .tabs a span.active{
     background: #eee;
 }
+main button{
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 10pt;
+}
+main input{
+    display: block;
+    margin-top: 10px;
+}
 /* main .right{
     float:left;
     width: 280px;
