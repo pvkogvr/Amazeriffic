@@ -6,6 +6,14 @@ var main = function(){
     "Ответить на письма нанимателя LinkedIn", 
     "Вывести Грейси на прогулку в парк", 
     "Закончить писать книгу"]
+    var addTask = function(newTask, listTask){
+        newTask = $("input").val()
+        if (newTask != ''){
+            listTask.push(newTask);
+            alert(`Новое задание: ${newTask}, успешно добавлено`)
+            $("input").val('');
+        }
+    }
     $(".tabs a span").toArray().forEach(function(element){
         $(element).on("click", function(){
             var $element = $(element);
@@ -22,15 +30,14 @@ var main = function(){
                 });
             } else if ($element.parent().is(":nth-child(3)")){
                 var newTodo;
-                $(".content").append($("<input>"))
-                $(".content").append($("<button>Добавить</button>")).on("click", function(){
-                    newTodo = $("input").val()
-                    if (newTodo != ''){
-                        toDos.push(newTodo);
-                        alert(`Новое задание: ${newTodo}, успешно добавлено`)
-                        $("input").val('');
+                $(".content").append($("<input>")).on("keydown", function(e){
+                    if(e.keyCode == 13){
+                        addTask(newTodo, toDos);
                     }
-                })
+                });
+                $(".content").append($("<button>Добавить</button>")).on("click", function(){
+                    addTask(newTodo, toDos);
+                });
             } 
             return false;
         });
