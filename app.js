@@ -1,11 +1,8 @@
-var main = function(){
+var main = function(toDoObjects){
     "use strict";
-    var toDos =["Купить продукты",
-    "Обновить несколько новых задач",
-    "Подготовиться к лекциям в понедельник", 
-    "Ответить на письма нанимателя LinkedIn", 
-    "Вывести Грейси на прогулку в парк", 
-    "Закончить писать книгу"]
+    var toDos = toDoObjects.map(function(toDo){
+        return toDo.description;
+    })
     var addTask = function(newTask, listTask){
         newTask = $("input").val()
         if (newTask != ''){
@@ -44,7 +41,12 @@ var main = function(){
     });
     $(".tabs a:first-код для этого элемента может выглядеть вот так:child span").trigger("click");
 };
-$(document).ready(main);
+$(document).ready(function(){
+    $.getJSON("todos.json", function(toDoObjects){
+        main(toDoObjects);
+    });
+});
+
 
 //Уровни адаптивности:
 //1. Написать код очевидно
